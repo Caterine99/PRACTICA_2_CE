@@ -1,0 +1,53 @@
+---
+title: "Práctica II"
+autor: "Caterine Guerrero"
+date: 06-17-2023
+format: html
+editor: visual
+---
+
+-   **Demostrar que la Distribución Binomial** $Y \sim \operatorname{B}(n, \pi)$**, pertenece a la familia exponencial de distribuciones (FED)**
+
+Sea su función de distribución de probabilidad:
+
+$$
+\begin{aligned}
+f(y ; \pi) & =\left(\begin{array}{l}
+n \\
+y
+\end{array}\right) \pi^y(1-\pi)^{n-y} \\
+& =e^{\log \left(\begin{array}{l}
+n \\
+y
+\end{array}\right)+y \log \pi+(n-y) \log (1-\pi)} \\
+& =e^{ y \log \left(\frac{\pi}{1-\pi}\right)+n \log (1-\pi)+\log \left(\begin{array}{l}
+n \\
+y
+\end{array}\right)}
+\end{aligned}$$
+
+**Comparamos: **$f(y;\theta)=e^{a(y)b(\theta)+c(\theta)+d(y)}$
+
+Y se obtiene que:
+
+$a(y)=y,  b(\pi)=\log \left(\frac{\pi}{1-\pi}\right),  c(\pi)=n \log (1-\pi)$ y $d(y)=\log \left(\begin{array}{l}n \\ y\end{array}\right)$
+
+De esta forma, queda demostrado que la distribución binomial pertenece a la familia exponencial.
+
+-   **Determinar los momentos parámetricos de una FED, sabiendo que las variables provienen de la Distribución Normal** $Y \sim \mathcal{N}\left(\mu, \sigma^2\right)$
+
+
+Sea $$\begin{aligned}
+f(y \mid \mu, \theta) & =\left(2 \pi \sigma^2\right)^{-\frac{1}{2}} e^{-\frac{1}{2 \sigma^2}(y-\mu)^2} \\
+& =e^{-\frac{1}{2 \sigma^2}\left(y^2-2 y \mu+\mu^2\right)} e^{ -\frac{1}{2} \log \left(2 \pi \sigma^2\right)} \\
+& =e^{\frac{y \mu-\frac{1}{2} \mu^2}{\sigma^2}-\frac{1}{2}\left(\frac{y^2}{\sigma^2}+\log \left(2 \pi \sigma^2\right)\right)}.
+\end{aligned}$$
+
+Comparandola Definición $f(y \mid \theta, \phi)=e^{ \frac{y \theta-b(\theta)}{a(\phi)}+c(y, \phi)}$ de la familia exponencial, 
+
+tenemos que: $\theta=\mu, \phi=\sigma^2$
+
+y $$
+a(\phi)=\phi, \quad b(\theta)=\frac{1}{2} \theta^2, \quad c(y, \phi)=-\frac{1}{2}\left(\frac{y^2}{\phi}+\log (2 \pi \phi)\right)$$
+
+El parámetro canónico resulta ser justamente $\mu$ y el parámetro de dispersión $\sigma^2$.
